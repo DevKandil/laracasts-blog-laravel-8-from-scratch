@@ -5,6 +5,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+</style>
 
 <body style="font-family: Open Sans, sans-serif">
     <section class="px-6 py-8">
@@ -28,7 +34,7 @@
                     <a href="/register" class="text-xs font-bold">Register</a>
                     <a href="/login" class="ml-6 text-xs font-bold">Log In</a>
                 @endauth
-                <a href="#" class="ml-3 rounded-full bg-blue-500 px-5 py-3 text-xs font-semibold uppercase text-white">
+                <a href="#newsletter" class="ml-3 rounded-full bg-blue-500 px-5 py-3 text-xs font-semibold uppercase text-white">
                     Subscribe for Updates
                 </a>
             </div>
@@ -36,7 +42,7 @@
 
         {{ $slot }}
 
-        <footer class="mt-16 rounded-xl border border-black border-opacity-5 bg-gray-100 px-10 py-16 text-center">
+        <footer id="newsletter" class="mt-16 rounded-xl border border-black border-opacity-5 bg-gray-100 px-10 py-16 text-center">
             <img src="/images/lary-newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 145px;">
             <h5 class="text-3xl">Stay in touch with the latest posts</h5>
             <p class="mt-3 text-sm">Promise to keep the inbox clean. No bugs.</p>
@@ -44,14 +50,25 @@
             <div class="mt-10">
                 <div class="relative mx-auto inline-block rounded-full lg:bg-gray-200">
 
-                    <form method="POST" action="#" class="text-sm lg:flex">
+                    <form method="POST" action="/newsletter" class="text-sm lg:flex">
+                        @csrf
                         <div class="flex items-center lg:px-5 lg:py-3">
                             <label for="email" class="hidden lg:inline-block">
                                 <img src="/images/mailbox-icon.svg" alt="mailbox letter">
                             </label>
 
-                            <input id="email" type="text" placeholder="Your email address"
-                                   class="py-2 pl-4 focus-within:outline-none lg:bg-transparent lg:py-0">
+                            <div>
+
+                                <input id="email"
+                                       name="email"
+                                       type="text"
+                                       placeholder="Your email address"
+                                       value="{{ old('email') }}"
+                                       class="py-2 pl-4 focus-within:outline-none lg:bg-transparent lg:py-0">
+                            </div>
+                            @error('email')
+                            <p class="mt-1 text-xs text-red-500">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <button type="submit"

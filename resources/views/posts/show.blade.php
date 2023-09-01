@@ -55,7 +55,16 @@
 
                     {{-- Add a new comment--}}
                     <section class="col-span-8 col-start-5 mt-10 space-y-6">
-                        <x-comment-form />
+
+                        <!-- comment form -->
+                        @auth()
+                        <x-comment-form  :post="$post" />
+                        @else
+                            <p class="font-semibold">
+                                <a href="/register" class="text-blue-400 hover:underline">Register</a> or
+                                <a href="/login" class="text-blue-400 hover:underline">log in</a> to leave a comment.
+                            </p>
+                        @endauth
 
                     {{-- Post Comments--}}
 

@@ -15,7 +15,7 @@
                             <div>
                                 <label for="name" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Name</label>
                                 <input type="text" name="name" id="name" value="{{ old('name') }}"
-                                       class="block w-full rounded-lg border border-gray-300 text-gray-900 p-2.5 focus:border-blue-600 focus:ring-blue-600 dark:placeholder-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white sm:text-sm dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                       class="block w-full rounded-lg border border-gray-300 @error('name') border-red-500 @enderror text-gray-900 p-2.5 focus:border-blue-600 focus:ring-blue-600 dark:placeholder-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white sm:text-sm dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                        placeholder="Your name" required="">
 
                                 {{-- If You Need To Display Each Error Under It's Input--}}
@@ -28,7 +28,7 @@
                                 <label for="username"
                                        class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Username</label>
                                 <input type="text" name="username" id="username" value="{{ old('username') }}"
-                                       class="block w-full rounded-lg border border-gray-300 text-gray-900 p-2.5 focus:border-blue-600 focus:ring-blue-600 dark:placeholder-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white sm:text-sm dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                       class="block w-full rounded-lg border border-gray-300 @error('username') border-red-500 @enderror text-gray-900 p-2.5 focus:border-blue-600 focus:ring-blue-600 dark:placeholder-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white sm:text-sm dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                        placeholder="Username" required="">
                                 {{--                                @error('username')--}}
                                 {{--                                <p class="mt-1 text-xs text-red-500">{{ $message }}</p>--}}
@@ -39,7 +39,7 @@
                                 <label for="email" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Your
                                     email</label>
                                 <input type="email" name="email" id="email" value="{{ old('email') }}"
-                                       class="block w-full rounded-lg border border-gray-300 text-gray-900 p-2.5 focus:border-blue-600 focus:ring-blue-600 dark:placeholder-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white sm:text-sm dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                       class="block w-full rounded-lg border border-gray-300 @error('email') border-red-500 @enderror text-gray-900 p-2.5 focus:border-blue-600 focus:ring-blue-600 dark:placeholder-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white sm:text-sm dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                        placeholder="name@company.com" required="">
                                 {{--                                @error('email')--}}
                                 {{--                                <p class="mt-1 text-xs text-red-500">{{ $message }}</p>--}}
@@ -50,7 +50,7 @@
                                 <label for="password"
                                        class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Password</label>
                                 <input type="password" name="password" id="password" placeholder="••••••••"
-                                       class="block w-full rounded-lg border border-gray-300 text-gray-900 p-2.5 focus:border-blue-600 focus:ring-blue-600 dark:placeholder-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white sm:text-sm dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                                       class="block w-full rounded-lg border border-gray-300 @error('password') border-red-500 @enderror text-gray-900 p-2.5 focus:border-blue-600 focus:ring-blue-600 dark:placeholder-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white sm:text-sm dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                        required="">
                                 {{--                                @error('password')--}}
                                 {{--                                <p class="mt-1 text-xs text-red-500">{{ $message }}</p>--}}

@@ -7,9 +7,14 @@
 @section('content')
 
             <section>
-                <h1 class="text-xl leading-tight tracking-tight text-gray-700 dark:text-white md:text-2xl">
-                    Add a new Post
-                </h1>
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-700 dark:text-gray-200">
+                        Add New Post
+                    </h2>
+{{--                    <p class="text-sm text-gray-600 dark:text-gray-400">--}}
+{{--                        Add posts--}}
+{{--                    </p>--}}
+                </div>
                 <div class="mx-auto max-w-2xl px-4 py-8 lg:py-16">
                     <form action="/admin/posts" method="POST" enctype="multipart/form-data">
                         @csrf

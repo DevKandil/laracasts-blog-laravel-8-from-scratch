@@ -37,12 +37,12 @@
                     </button>
                     <ul id="dropdown-posts" class="{{ request()->is('admin/posts*') ? '' : 'hidden' }} py-2 space-y-2">
                         <li>
-                            <a href="/admin/posts/create" 
+                            <a href="/admin/posts/create"
                             class="flex items-center p-2 pl-11 w-full {{ request()->is('admin/posts/create') ? 'bg-white' : '' }} text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-white dark:text-white dark:hover:bg-gray-700"
                             >Create</a>
                         </li>
                         <li>
-                            <a href="/admin/posts" 
+                            <a href="/admin/posts"
                             class="flex items-center p-2 pl-11 w-full {{ request()->is('admin/posts') ? 'bg-white' : '' }} text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-white dark:text-white dark:hover:bg-gray-700"
                             >All Posts</a>
                         </li>
@@ -60,8 +60,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/admin/users" class="flex items-center rounded-lg p-2 text-base font-normal text-gray-900 group hover:bg-white">
-                            <svg class="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <a href="/admin/users" class="flex items-center {{ request()->is('admin/users') ? 'bg-white' : '' }} rounded-lg p-2 text-base font-normal text-gray-900 group hover:bg-white">
+                            <svg class="h-6 w-6 flex-shrink-0 text-gray-500 {{ request()->is('admin/users') ? 'text-gray-900' : '' }} transition duration-75 group-hover:text-gray-900" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="ml-3 flex-1 whitespace-nowrap">Users</span>

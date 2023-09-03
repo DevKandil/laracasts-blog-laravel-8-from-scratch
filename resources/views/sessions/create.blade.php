@@ -16,9 +16,15 @@
                             <div>
                                 <label for="email" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
                                     Email</label>
-                                <input type="email" name="email" id="email" value="{{ old('email') }}"
+                                <input type="email"
+                                       name="email"
+                                       id="email"
+                                       value="{{ old('email') }}"
                                        class="block w-full rounded-lg border border-gray-300 @error('email') border-red-500 @enderror text-gray-900 p-2.5 focus:border-blue-600 focus:ring-blue-600 dark:placeholder-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white sm:text-sm dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                       placeholder="name@company.com" required="">
+                                       placeholder="name@company.com"
+                                       required=""
+                                       autocomplete="new-username"
+                                >
                                 @error('email')
                                 <p class="mt-1 text-xs text-red-500">{{ $message }}</p>
                                 @enderror
@@ -27,9 +33,14 @@
                             <div>
                                 <label for="password"
                                        class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                                <input type="password" name="password" id="password" placeholder="••••••••"
+                                <input type="password"
+                                       name="password"
+                                       id="password"
+                                       placeholder="••••••••"
                                        class="block w-full rounded-lg border border-gray-300 @error('password') border-red-500 @enderror text-gray-900 p-2.5 focus:border-blue-600 focus:ring-blue-600 dark:placeholder-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white sm:text-sm dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                       required="">
+                                       required=""
+                                        autocomplete="new-password"
+                                >
                                 @error('password')
                                 <p class="mt-1 text-xs text-red-500">{{ $message }}</p>
                                 @enderror

@@ -1,7 +1,13 @@
-<x-layout>
-    <section class="px-6 py-8">
-        <section>
-                <h1 class="mx-auto mt-10 text-center text-xl font-bold leading-tight tracking-tight text-gray-700 dark:text-white md:text-2xl">
+@extends('admin.dashboard')
+
+@section('title')
+    Add Post
+@endsection
+
+@section('content')
+
+            <section>
+                <h1 class="text-xl leading-tight tracking-tight text-gray-700 dark:text-white md:text-2xl">
                     Add a new Post
                 </h1>
                 <div class="mx-auto max-w-2xl px-4 py-8 lg:py-16">
@@ -46,6 +52,8 @@
                         </button>
                     </form>
                 </div>
-        </section>
-    </section>
-</x-layout>
+            </section>
+
+
+
+@endsection

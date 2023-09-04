@@ -11,7 +11,14 @@
             <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
             <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG or GIF (MAX. 800x400px)</p>
         </div>
-        <input id="thumbnail" name="thumbnail" type="file" class="flex w-40 flex-col items-center justify-center text-gray-500" accept=".jpg,.png,.gif" style="text-indent: -103px;" />
+        <input
+            {{ $attributes }}
+            id="thumbnail"
+            name="thumbnail"
+            type="file"
+            class="flex w-40 flex-col items-center justify-center text-gray-500"
+            accept=".jpg,.png,.gif"
+            style="text-indent: -103px;" />
 
         <x-form.error name="{{ $name }}" />
 

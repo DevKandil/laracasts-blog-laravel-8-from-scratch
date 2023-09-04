@@ -19,7 +19,7 @@
                                 Posts
                             </h2>
                             <p class="text-sm text-gray-600 dark:text-gray-400">
-                                Add posts, edit and more.
+                                All posts, edit and more.
                             </p>
                         </div>
 

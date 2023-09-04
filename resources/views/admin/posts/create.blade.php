@@ -20,9 +20,9 @@
                         @csrf
                         <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 
-                            <x-form.input name="title" />
+                            <x-form.input name="title" type="text" :value="old('title')" required />
 
-                            <x-form.input name="slug" />
+                            <x-form.input name="slug" type="text" :value="old('slug')" required />
 
                             <x-form.file-input name="thumbnail" />
 

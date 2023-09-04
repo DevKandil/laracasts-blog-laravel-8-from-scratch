@@ -24,10 +24,12 @@ Route::post('/login', [SessionsController::class, 'store'])->middleware('guest')
 Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth');
 Route::post('/newsletter', NewsletterController::class);
 
+
+// Admin Dashboard
+
 Route::get('/admin/dashboard', function (){
     return view('admin.dashboard');
 })->middleware('admin');
-
 
 Route::get('/admin/posts', [AdminPostController::class, 'index'])->middleware('admin');
 Route::get('/admin/posts/create', [AdminPostController::class, 'create'])->middleware('admin');

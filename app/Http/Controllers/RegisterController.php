@@ -21,6 +21,8 @@ class RegisterController extends Controller
             'password'  => ['required', 'max:255', 'min:8']
         ]);
 
+        $attributes['profile_pic'] = 'thumbnails/lary-avatar.svg';
+
         $user = User::create($attributes);
 
         auth()->login($user);

@@ -19,6 +19,7 @@ class PostFactory extends Factory
         return [
             'user_id' => User::factory(),
             'category_id' => Category::factory(),
+            'thumbnail' => 'thumbnails/blog-post-example.png',
             'slug' => $this->faker->slug(),
             'title' => $this->faker->sentence(),
             'excerpt' => '<p>' . implode('</p><p>', $this->faker->paragraphs(2)) . '</p>',

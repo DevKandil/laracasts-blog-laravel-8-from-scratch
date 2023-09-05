@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\AdminUsersController;
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PostCommentsController;
 use App\Http\Controllers\SessionsController;
@@ -31,7 +32,16 @@ Route::post('/newsletter', NewsletterController::class);
 Route::view('/admin/dashboard', 'admin.index')->middleware('can:admin');
 
 // Categories
+Route::middleware('can:admin')->group(function (){
 
+    Route::get('/admin/categories', [CategoriesController::class, 'index']);
+    Route::get('/admin/categories/create', [CategoriesController::class, 'create']);
+    Route::post('/admin/categories', [CategoriesController::class, 'store']);
+    Route::get('/admin/categories/{category}/edit', [CategoriesController::class, 'edit']);
+    Route::patch('/admin/categories/{category}', [CategoriesController::class, 'update']);
+    Route::delete('/admin/categories/{category}', [CategoriesController::class, 'destroy']);
+
+});
 
 
 

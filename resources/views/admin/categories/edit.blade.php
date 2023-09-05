@@ -1,7 +1,7 @@
 @extends('admin.dashboard')
 
 @section('title')
-    Edit Post
+    Edit Category
 @endsection
 
 @section('content')
@@ -9,50 +9,18 @@
     <section>
         <div>
             <h2 class="text-xl font-semibold text-gray-700 dark:text-gray-200">
-                Edit Post
+                Edit Category
             </h2>
-            {{--                    <p class="text-sm text-gray-600 dark:text-gray-400">--}}
-            {{--                        Add posts--}}
-            {{--                    </p>--}}
         </div>
         <div class="mx-auto max-w-2xl px-4 py-8 lg:py-16">
-            <form action="/admin/posts/{{ $post->id }}" method="POST" enctype="multipart/form-data">
+            <form action="/admin/categories/{{ $category->id }}" method="POST" >
                 @csrf
                 @method('PATCH')
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 
-                    <x-form.input name="title" type="text" :value="old('title', $post->title)" required/>
+                    <x-form.input name="name" type="text" :value="old('name', $category->name)" required/>
 
-                    <x-form.input name="slug" type="text" :value="old('title', $post->slug)" required/>
-
-                    <x-form.file-input name="thumbnail" :value="old('thumbnail', $post->thumbnail)"/>
-
-                    <div class="sm:col-span-2 mx-auto">
-                        <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl ml-6"
-                             width="200">
-                    </div>
-                    <x-form.textarea name="excerpt" rows="4">{{ old('excerpt', $post->excerpt) }}</x-form.textarea>
-
-                    <x-form.textarea name="body" rows="10">{{ old('excerpt', $post->body) }}</x-form.textarea>
-
-
-                    <div>
-                        <x-form.label name="category"/>
-                        <select
-                            id="category"
-                            name="category_id"
-                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-900 p-2.5 focus:border-blue-500 focus:ring-blue-500 dark:placeholder-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:border-blue-500 dark:focus:ring-blue-500">
-                            <option selected="">Select category</option>
-                            @foreach (\App\Models\Category::all() as $category)
-                                <option
-                                    value="{{ $category->id }}"
-                                    {{ old('category_id', $post->category_id) == $category->id ? 'selected' : '' }}
-                                >{{ ucwords($category->name) }}</option>
-                            @endforeach
-                        </select>
-
-                        <x-form.error name="category_id"/>
-                    </div>
+                    <x-form.input name="slug" type="text" :value="old('slug', $category->slug)" required/>
 
 
                 </div>

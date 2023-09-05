@@ -12,15 +12,15 @@
                 Edit Post
             </h2>
         </div>
-        <div class="mx-auto max-w-2xl px-4 py-8 lg:py-16">
+        <div class="mx-auto max-w-2xl py-2">
             <form action="/admin/posts/{{ $post->id }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 
                     <div class="sm:col-span-2 mx-auto">
-                        <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl ml-6"
-                             width="200">
+                        <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl"
+                             width="400">
                     </div>
 
                     <x-form.input name="title" type="text" :value="old('title', $post->title)" required/>

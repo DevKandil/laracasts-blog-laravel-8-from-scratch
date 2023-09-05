@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\AdminUsersController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PostCommentsController;
 use App\Http\Controllers\SessionsController;
@@ -25,39 +26,39 @@ Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth
 Route::post('/newsletter', NewsletterController::class);
 
 
-// Admin Dashboard
+// ******  Admin Dashboard  *******
 
-Route::get('/admin/dashboard', function (){
-    return view('admin.dashboard');
-})->middleware('admin');
+Route::view('/admin/dashboard', 'admin.dashboard')->middleware('can:admin');
 
-Route::get('/admin/posts', [AdminPostController::class, 'index'])->middleware('admin');
-Route::get('/admin/posts/create', [AdminPostController::class, 'create'])->middleware('admin');
-Route::post('/admin/posts', [AdminPostController::class, 'store'])->middleware('admin');
-Route::get('/admin/posts/{post}/edit', [AdminPostController::class, 'edit'])->middleware('admin');
-Route::patch('/admin/posts/{post}', [AdminPostController::class, 'update'])->middleware('admin');
-Route::delete('/admin/posts/{post}', [AdminPostController::class, 'destroy'])->middleware('admin');
+// Categories
 
 
-Route::get('/admin/users', function () {
-    return view('admin.users.create');
+
+
+
+// Posts
+Route::middleware('can:admin')->group(function () {
+
+Route::get('/admin/posts', [AdminPostController::class, 'index']);
+Route::get('/admin/posts/create', [AdminPostController::class, 'create']);
+Route::post('/admin/posts', [AdminPostController::class, 'store']);
+Route::get('/admin/posts/{post}/edit', [AdminPostController::class, 'edit']);
+Route::patch('/admin/posts/{post}', [AdminPostController::class, 'update']);
+Route::delete('/admin/posts/{post}', [AdminPostController::class, 'destroy']);
+
 });
 
 
 
+// Users
+Route::middleware('can:admin')->group(function (){
 
-// Route::get('categories/{category:slug}', function (Category $category) {
-//     return view('posts', [
-//         'posts' => $category->posts,
-//         'currentCategory' => $category,
-//         'categories' => Category::all()
-//     ]);
-// })->name('category');
+Route::get('/admin/users', [AdminUsersController::class, 'index']);
+Route::get('/admin/users/create', [AdminUsersController::class, 'create']);
+Route::post('/admin/users', [AdminUsersController::class, 'store']);
+Route::get('/admin/users/{user}/edit', [AdminUsersController::class, 'edit']);
+Route::patch('/admin/users/{user}', [AdminUsersController::class, 'update']);
+Route::delete('/admin/users/{user}', [AdminUsersController::class, 'destroy']);
 
+});
 
-
-// Route::get('authors/{author:username}', function (User $author) {
-//     return view('posts.index', [
-//         'posts' => $author->posts,
-//     ]);
-// })->name('author');

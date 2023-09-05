@@ -11,6 +11,9 @@
             <h2 class="text-xl font-semibold text-gray-700 dark:text-gray-200">
                 Edit Post
             </h2>
+            {{--                    <p class="text-sm text-gray-600 dark:text-gray-400">--}}
+            {{--                        Add posts--}}
+            {{--                    </p>--}}
         </div>
         <div class="mx-auto max-w-2xl px-4 py-8 lg:py-16">
             <form action="/admin/posts/{{ $post->id }}" method="POST" enctype="multipart/form-data">
@@ -18,17 +21,16 @@
                 @method('PATCH')
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 
-                    <div class="sm:col-span-2 mx-auto">
-                        <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl ml-6"
-                             width="200">
-                    </div>
-
                     <x-form.input name="title" type="text" :value="old('title', $post->title)" required/>
 
                     <x-form.input name="slug" type="text" :value="old('title', $post->slug)" required/>
 
                     <x-form.file-input name="thumbnail" :value="old('thumbnail', $post->thumbnail)"/>
 
+                    <div class="sm:col-span-2 mx-auto">
+                        <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl ml-6"
+                             width="200">
+                    </div>
                     <x-form.textarea name="excerpt" rows="4">{{ old('excerpt', $post->excerpt) }}</x-form.textarea>
 
                     <x-form.textarea name="body" rows="10">{{ old('excerpt', $post->body) }}</x-form.textarea>

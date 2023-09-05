@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <title>@yield('title')</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <style>
         html {
             scroll-behavior: smooth;
@@ -37,6 +38,6 @@
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.12.3/dist/cdn.min.js"></script>
+{{--    <script defer src="{{ asset('js/app.js') }}"></script>--}}
 </body>
 </html>

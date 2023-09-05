@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
     <style>
         html {
             scroll-behavior: smooth;
@@ -38,6 +38,6 @@
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
-{{--    <script defer src="{{ asset('js/app.js') }}"></script>--}}
+   <script defer src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

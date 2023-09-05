@@ -28,7 +28,7 @@ Route::post('/newsletter', NewsletterController::class);
 
 // ******  Admin Dashboard  *******
 
-Route::view('/admin/dashboard', 'admin.dashboard')->middleware('can:admin');
+Route::view('/admin/dashboard', 'admin.index')->middleware('can:admin');
 
 // Categories
 

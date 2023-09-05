@@ -1,2 +1,5 @@
 require('./bootstrap');
-require('alpinejs');
+// add these files bellow
+import Alpine from 'alpinejs';
+window.Alpine = Alpine;
+Alpine.start();

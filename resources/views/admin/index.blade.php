@@ -23,7 +23,7 @@
 
                     <div class="mt-1 flex items-center">
                         <h3 class="text-xl sm:text-2xl font-medium text-gray-800 dark:text-gray-200">
-                            589
+                            {{ $users->count() }}
                         </h3>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
 
                     <div class="mt-1 flex items-center">
                         <h3 class="text-xl sm:text-2xl font-medium text-gray-800 dark:text-gray-200">
-                            3,489
+                            {{ $posts->count() }}
                         </h3>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
 
                     <div class="mt-1 flex items-center">
                         <h3 class="text-xl sm:text-2xl font-medium text-gray-800 dark:text-gray-200">
-                            7,285
+                            {{ $comments->count() }}
                         </h3>
                     </div>
                 </div>
